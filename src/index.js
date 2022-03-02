@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import allReducer from "./reducers";
 import { Provider } from "react-redux";
+import "tachyons";
 // window.__REUDX... is from chrome redux dev tools extension
 const store = createStore(
   allReducer,
