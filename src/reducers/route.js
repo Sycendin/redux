@@ -1,4 +1,4 @@
-export const routeSelect = (state = "home", action) => {
+export const routeSelect = (state = "startscreen", action) => {
   switch (action.type) {
     case "HOME":
       return (state = "home");

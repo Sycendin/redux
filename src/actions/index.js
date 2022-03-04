@@ -55,3 +55,10 @@ export const player2Wins = () => {
     type: "PLAYER2",
   };
 };
+
+export const scoreChange = (score) => {
+  return {
+    type: "CHANGE_SCORE",
+    payload: score,
+  };
+};
