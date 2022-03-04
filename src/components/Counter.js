@@ -6,6 +6,7 @@ import { routeGameover, player1Wins, player2Wins } from "../actions";
 const Counter = () => {
   const counterPlayer1 = useSelector((state) => state.counterP1);
   const counterPlayer2 = useSelector((state) => state.counterP2);
+  const winningScore = useSelector((state) => state.changeScore);
   const divC = useSelector((state) => state.divColor1);
   const dispatch = useDispatch();
   let btnColor = "#57b394";
@@ -16,10 +17,10 @@ const Counter = () => {
     if (e.key === "p") {
       dispatch(incrementp2(1));
     }
-    if (counterPlayer1 === 2) {
+    if (counterPlayer1 === winningScore - 1) {
       dispatch(player1Wins());
       dispatch(routeGameover());
-    } else if (counterPlayer2 === 2) {
+    } else if (counterPlayer2 === winningScore - 1) {
       dispatch(player2Wins());
       dispatch(routeGameover());
     }
@@ -46,7 +47,7 @@ const Counter = () => {
           <h1 className="mr4">Player 1 Counter: {counterPlayer1}</h1>
           <h1 className="ml4">Player 2 Counter: {counterPlayer2}</h1>
         </div>
-        <h2>Get your counter to 3 to win!</h2>
+        <h2>Get your counter to {winningScore} to win!</h2>
       </div>
     </Fragment>
   );
