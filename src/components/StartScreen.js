@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { routeHome, scoreChange } from "../actions";
 
 const StartScreen = () => {
   const dispatch = useDispatch();
 
-  // Reset counter states and change route to home
+  // change route to home
   const changeRouteHome = () => {
     dispatch(routeHome());
   };
